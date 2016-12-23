@@ -45,4 +45,21 @@ cylinder(r=10, h=40,center=true);
 cube([20,40,30], center=true);
 }
 }
-    
+
+   
+
+translate([0,0,130])
+union(){
+    cylinder(r1=50, r2=60, h=15, center=false);
+    translate([0,0,15+10])
+        difference(){
+            cylinder(r=60, h=20,center =true);
+            for(i=[0:9]){
+            rotate([0,0,36*i])
+            translate([-5,0,0])
+            cube([10,60,10]);
+            }
+            cylinder(r=50, h=20,center =true);
+
+        }
+}
