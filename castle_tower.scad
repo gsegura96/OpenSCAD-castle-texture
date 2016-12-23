@@ -1,7 +1,7 @@
 tower_radius=30;
 tower_height=60;
 segment_height=5;
-
+$fn=20; //10 ir higher
 module tower(tower_radius=30, tower_height=60,segments=5, layers=4){
     segment_height=tower_height/layers;
     difference(){
