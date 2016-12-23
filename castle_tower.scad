@@ -11,6 +11,7 @@ module tower(tower_radius=30, tower_height=60,segments=5, segment_height=15){
 module tower_texture(tower_radius, tower_height,segments, segment_height){
     step=360/segments;
     for(i=[0:5]){
+    rotate([0,0,(step/2)*i])
     translate([0,0,segment_height*i])
     union(){
         for(i=[0:segments]){
