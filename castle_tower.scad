@@ -5,7 +5,11 @@ segment_height=5;
 module tower(tower_radius=30, tower_height=60,segments=5, layers=4){
     segment_height=tower_height/layers;
     difference(){
-    %cylinder(r=tower_radius,h=tower_height, center=false, $fn=30);
+            difference(){
+            cylinder(r=tower_radius,h=tower_height, center=false, $fn=30);
+             translate([0,0,5])
+            cylinder(r=tower_radius-5,h=tower_height, center=false, $fn=30);
+            }
     tower_texture(tower_radius,segments, segment_height, layers);
         }
 }
@@ -28,5 +32,5 @@ module tower_texture(tower_radius,segments, segment_height, layers){
     }
 }
 
-tower();
+tower(tower_radius=60, tower_height=300,segments=5, layers=6);
    
